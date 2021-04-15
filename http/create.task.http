@@ -1,0 +1,8 @@
+POST http://localhost:3001/api/tasks HTTP/1.1
+Content-Type: application/json
+
+{
+  "body": "asda aasa",
+  "deadline": "2021-1-1",
+  "isDone": false
+}
