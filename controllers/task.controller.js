@@ -39,10 +39,12 @@ module.exports.getAllTasks = async (req, res, next) => {
     }
 
     res.status(200).send({
-      tasksCount: tasksCount,
-      pagesCount: Math.ceil(tasksCount / limit),
-      pageSize: Number(limit),
-      currentPage: Math.floor(offset / limit) + 1,
+      pagination: {
+        tasksCount: tasksCount,
+        pagesCount: Math.ceil(tasksCount / limit),
+        pageSize: Number(limit),
+        currentPage: Math.floor(offset / limit) + 1,
+      },
       data: tasks,
     });
   } catch (err) {
